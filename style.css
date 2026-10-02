@@ -1,0 +1,1074 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: "Poppins", sans-serif;
+
+    overflow-x: hidden;
+
+    background: #fff0f5;
+
+    color: #57323f;
+}
+
+
+button {
+
+    font-family: inherit;
+
+    border: none;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+
+.section {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 50px 20px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.hidden-section {
+
+    display: none;
+}
+
+
+.section-content {
+
+    width: min(92%, 1000px);
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   GLOBAL HEARTS
+========================================================= */
+
+#globalHearts {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 100;
+}
+
+
+.floating-heart {
+
+    position: absolute;
+
+    bottom: -50px;
+
+    animation: floatingHeart linear forwards;
+
+    opacity: 0;
+
+}
+
+
+@keyframes floatingHeart {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(0.8);
+
+        opacity: 0;
+
+    }
+
+    10% {
+
+        opacity: 0.8;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg)
+            scale(1.4);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   WELCOME
+========================================================= */
+
+.welcome-section {
+
+    background:
+        radial-gradient(
+            circle at top,
+            #fff,
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #ffe1eb,
+            #ffd0df,
+            #fff0f5
+        );
+
+    text-align: center;
+}
+
+
+.welcome-content {
+
+    width: min(90%, 650px);
+
+}
+
+
+.big-heart {
+
+    font-size: clamp(55px, 10vw, 100px);
+
+    margin-bottom: 15px;
+
+    animation: heartbeat 1.5s infinite;
+
+}
+
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+
+        transform: scale(1);
+
+    }
+
+    25% {
+
+        transform: scale(1.12);
+
+    }
+
+    50% {
+
+        transform: scale(1);
+
+    }
+
+    75% {
+
+        transform: scale(1.12);
+
+    }
+
+}
+
+
+.small-heading {
+
+    color: #a65370;
+
+    font-size: clamp(14px, 2vw, 18px);
+
+    letter-spacing: 1px;
+
+}
+
+
+.welcome-content h1 {
+
+    color: #d6336c;
+
+    font-size: clamp(38px, 7vw, 70px);
+
+    margin: 8px 0 15px;
+
+}
+
+
+.subtitle {
+
+    font-size: clamp(17px, 2.5vw, 23px);
+
+}
+
+
+.dont-leave {
+
+    margin-top: 5px;
+
+    font-size: clamp(14px, 2vw, 18px);
+
+}
+
+
+.main-button {
+
+    margin-top: 30px;
+
+    padding: 14px 28px;
+
+    border-radius: 50px;
+
+    background: #d6336c;
+
+    color: white;
+
+    font-size: clamp(14px, 2vw, 17px);
+
+    font-weight: 600;
+
+    box-shadow:
+        0 10px 30px rgba(214, 51, 108, 0.25);
+
+    transition: 0.3s ease;
+
+}
+
+
+.main-button:hover {
+
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 15px 35px rgba(214, 51, 108, 0.35);
+
+}
+
+
+.main-button:active {
+
+    transform: scale(0.96);
+
+}
+
+
+/* =========================================================
+   ENVELOPE SECTION
+========================================================= */
+
+.envelope-section {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff3f7,
+            #ffd9e5
+        );
+
+    text-align: center;
+}
+
+
+.envelope-section h2 {
+
+    color: #d6336c;
+
+    font-size: clamp(24px, 4vw, 38px);
+
+    margin-top: 8px;
+
+}
+
+
+.top-text {
+
+    font-size: clamp(15px, 2vw, 18px);
+
+}
+
+
+/* =========================================================
+   ENVELOPE
+========================================================= */
+
+.envelope {
+
+    width: min(82vw, 380px);
+
+    aspect-ratio: 1.5 / 1;
+
+    margin: 45px auto 10px;
+
+    position: relative;
+
+    perspective: 800px;
+
+}
+
+
+.envelope-back {
+
+    position: absolute;
+
+    inset: 0;
+
+    background: #f48fb1;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 20px 45px rgba(130, 40, 75, 0.18);
+
+    z-index: 1;
+
+}
+
+
+.letter-paper {
+
+    position: absolute;
+
+    width: 82%;
+
+    height: 78%;
+
+    left: 9%;
+
+    top: 10%;
+
+    background: white;
+
+    border-radius: 7px;
+
+    z-index: 2;
+
+    transition: 1s ease;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.08);
+
+}
+
+
+.letter-paper-content {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #d6336c;
+
+    font-size: clamp(35px, 7vw, 60px);
+
+}
+
+
+.letter-paper-content span {
+
+    font-size: clamp(15px, 3vw, 22px);
+
+    font-weight: 600;
+
+    margin-top: 5px;
+
+}
+
+
+.envelope-front {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 58%;
+
+    background: #f28aae;
+
+    clip-path: polygon(
+        0 0,
+        50% 65%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+
+    z-index: 4;
+
+}
+
+
+.envelope-flap {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 65%;
+
+    background: #eb719d;
+
+    clip-path: polygon(
+        0 0,
+        50% 100%,
+        100% 0
+    );
+
+    transform-origin: top;
+
+    transition: 0.9s ease;
+
+    z-index: 5;
+
+}
+
+
+.envelope.open .envelope-flap {
+
+    transform: rotateX(180deg);
+
+}
+
+
+.envelope.open .letter-paper {
+
+    transform: translateY(-45%);
+
+    z-index: 3;
+
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.message-section {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff5f8,
+            #ffdce7
+        );
+
+}
+
+
+.message-card {
+
+    width: min(92%, 750px);
+
+    padding: clamp(30px, 6vw, 60px);
+
+    background: rgba(255, 255, 255, 0.9);
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(130, 40, 75, 0.13);
+
+    animation: cardAppear 0.8s ease;
+
+}
+
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px)
+            scale(0.96);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+.message-icon {
+
+    font-size: clamp(45px, 8vw, 70px);
+
+    animation: heartbeat 1.5s infinite;
+
+}
+
+
+.message-card h2 {
+
+    color: #d6336c;
+
+    font-size: clamp(25px, 5vw, 40px);
+
+    margin: 8px 0 30px;
+
+}
+
+
+.typing-box {
+
+    width: 100%;
+
+    min-height: 270px;
+
+    padding: clamp(18px, 4vw, 30px);
+
+    background: #fff7fa;
+
+    border: 1px solid #ffd5e1;
+
+    border-radius: 18px;
+
+    text-align: left;
+
+}
+
+
+#typingText {
+
+    white-space: pre-wrap;
+
+    color: #57323f;
+
+    font-size: clamp(14px, 2vw, 18px);
+
+    line-height: 2;
+
+}
+
+
+.cursor {
+
+    color: #d6336c;
+
+    animation: cursorBlink 0.7s infinite;
+
+    font-weight: bold;
+
+}
+
+
+@keyframes cursorBlink {
+
+    50% {
+
+        opacity: 0;
+
+    }
+
+}
+
+
+.hidden-button {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery-section {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff5f8,
+            #ffe0e9
+        );
+
+}
+
+
+.gallery-section h2 {
+
+    color: #d6336c;
+
+    font-size: clamp(26px, 5vw, 42px);
+
+    margin: 8px 0;
+
+}
+
+
+.gallery-subtitle {
+
+    font-size: clamp(14px, 2vw, 18px);
+
+}
+
+
+.photo-grid {
+
+    width: 100%;
+
+    margin-top: 40px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.photo-card {
+
+    background: white;
+
+    padding: 10px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 10px 25px rgba(130, 40, 75, 0.12);
+
+    transition: 0.3s ease;
+
+}
+
+
+.photo-card:hover {
+
+    transform:
+        translateY(-8px)
+        rotate(1deg);
+
+}
+
+
+.photo-card img {
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+}
+
+
+.photo-card p {
+
+    padding: 12px 5px 7px;
+
+    font-size: 14px;
+
+    color: #714253;
+
+}
+
+
+/* =========================================================
+   REASONS
+========================================================= */
+
+.reasons-section {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff1f6,
+            #ffdce8
+        );
+
+}
+
+
+.reasons-section h2 {
+
+    color: #d6336c;
+
+    font-size: clamp(25px, 5vw, 42px);
+
+    margin-top: 8px;
+
+}
+
+
+.reasons-grid {
+
+    width: 100%;
+
+    margin-top: 40px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.reason-card {
+
+    padding: 30px 20px;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(130, 40, 75, 0.1);
+
+    transition: 0.3s ease;
+
+}
+
+
+.reason-card:hover {
+
+    transform: translateY(-6px);
+
+}
+
+
+.reason-card > div {
+
+    font-size: 42px;
+
+}
+
+
+.reason-card h3 {
+
+    margin: 10px 0;
+
+    color: #d6336c;
+
+}
+
+
+.reason-card p {
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   COUNTER
+========================================================= */
+
+.counter-section {
+
+    background:
+        radial-gradient(
+            circle,
+            #fff,
+            #ffdce8
+        );
+
+    text-align: center;
+
+}
+
+
+.counter-content {
+
+    width: min(92%, 700px);
+
+}
+
+
+.counter-content h2 {
+
+    color: #d6336c;
+
+    font-size: clamp(27px, 5vw, 45px);
+
+    margin-top: 8px;
+
+}
+
+
+.love-counter {
+
+    margin: 35px auto 15px;
+
+    font-size: clamp(55px, 12vw, 110px);
+
+    font-weight: 700;
+
+    color: #d6336c;
+
+}
+
+
+.counter-message {
+
+    font-size: clamp(15px, 2.5vw, 20px);
+
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final-section {
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fff,
+            #ffd4e1,
+            #ffc1d5
+        );
+
+    text-align: center;
+
+}
+
+
+.final-content {
+
+    width: min(92%, 700px);
+
+}
+
+
+.final-heart {
+
+    font-size: clamp(70px, 15vw, 150px);
+
+    animation:
+        heartbeat 1.2s infinite;
+
+}
+
+
+.final-content h1 {
+
+    color: #d6336c;
+
+    font-size: clamp(42px, 9vw, 85px);
+
+    margin: 10px 0;
+
+}
+
+
+.final-text {
+
+    font-size: clamp(16px, 2.5vw, 22px);
+
+    line-height: 1.7;
+
+}
+
+
+.forever {
+
+    margin-top: 20px;
+
+    color: #a65370;
+
+    font-size: clamp(18px, 3vw, 25px);
+
+    font-weight: 600;
+
+}
+
+
+.final-hearts {
+
+    margin-top: 30px;
+
+    font-size: clamp(25px, 5vw, 40px);
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .photo-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .section {
+
+        padding:
+            35px
+            15px;
+
+    }
+
+
+    .photo-grid {
+
+        grid-template-columns: 1fr;
+
+        max-width: 400px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+
+    .reasons-grid {
+
+        grid-template-columns: 1fr;
+
+        max-width: 450px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+
+    .main-button {
+
+        width: min(90%, 320px);
+
+    }
+
+
+    .message-card {
+
+        padding: 25px 16px;
+
+    }
+
+
+    .typing-box {
+
+        min-height: 300px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .section {
+
+        padding:
+            25px
+            10px;
+
+    }
+
+
+    .envelope {
+
+        width: 90vw;
+
+    }
+
+
+    .message-card {
+
+        width: 96%;
+
+    }
+
+}
